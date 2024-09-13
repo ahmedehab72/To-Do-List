@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>ToDo List</title>
+  </head>
+  <body>
+
+    <!-- header -->
+    <header>
+      <div class="head">
+        <h1>TO DO LIST</h1>
+        <p>Add, Delete and Update</p>
+      </div>
+    </header>
+
+    <!-- main page -->
+    <main>
+      <section>
+        <div class="contain">
+          <!-- first input student name -->
+          <div class="divname">
+            <label for="name">Student Name</label>
+            <br />
+            <input id="name" type="text" placeholder="enter student name" />
+          </div>
+          <!-- second input student stage -->
+
+          <div class="divname">
+            <label for="stage">Student Stage</label>
+            <br />
+            <input
+              list="stagelist"
+              id="stage"
+              type="text"
+              placeholder="enter student stage"
+            />
+            <datalist id="stagelist">
+              <option value="1st"></option>
+              <option value="2nd"></option>
+              <option value="3rd"></option>
+              <option value="4th"></option>
+            </datalist>
+          </div>
+          <!-- third input student registration subject -->
+
+          <div class="divname">
+            <label for="subject">Registration Subject</label>
+            <br />
+            <input
+              id="subject"
+              type="text"
+              placeholder="enter student subject"
+            />
+          </div>
+           <!--add and update button  -->
+          <button
+            onclick="addStudent()"
+            type="submit"
+            class="addbtn btn appear"
+          >
+            Add Student
+          </button>
+          <button
+            onclick="updateForm()"
+            type="submit"
+            class="updatebtn btn hidden"
+          >
+            update Student
+          </button>
+        </div>
+      </section>
+      <section class="secondsec">
+        <!-- search input -->
+        <input
+          type="text"
+          placeholder="Search with name..."
+          oninput="searchStudent(this.value)"
+          class="searchInput"
+        />
+
+        <div class="contain">
+        <!-- table for display data for each student after entered -->
+          <table>
+            <thead>
+              <th class="p-10"></th>
+              <th>Name</th>
+              <th>Stage</th>
+              <th>Subject</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </thead>
+            <tbody id="rowData">
+              <!-- <tr>
+                    <td>ahmed</td>
+                    <td>ahmed</td>
+                    <td>ahmed</td>
+                    <td><button class="updatebtn">Update</button></td>
+                    <td><button class="deletebtn">Delete</button></td>
+                  </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!-- message when add or delete or update -->
+      <section>
+            <div class="trans transadd hidden"></div>
+        <i class="fa-regular fa-circle-check"></i> Student Added
+      </div>
+      <div class="trans transremove hidden">
+        <i class="fa-regular fa-circle-check"></i> Student Removed
+      </div>
+      <div class="trans transupdate hidden">
+        <i class="fa-regular fa-circle-check"></i> Student Updated
+      </div>
+      </section>
+  
+    </main>
+  
+
+    <script src="index.js"></script>
+  </body>
+</html>
